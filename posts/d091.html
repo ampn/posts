@@ -1,0 +1,618 @@
+<!doctype html>
+
+
+
+
+<!--html class="theme-next mist"-->
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta http-equiv="Cache-Control" content="max-age=7200">
+
+<meta name="theme-color" content="#333333">
+<meta name="referrer" content="same-origin">
+<meta name="referrer" content="no-referrer">
+
+
+
+  <meta name="author" content="马攀">
+
+
+
+  <meta name="keywords" content="马攀,mapan,马攀博客,马攀的博客">
+  <meta property="og:keywords" content="马攀,mapan,马攀博客,马攀的博客">
+
+
+
+  <meta name="description" content="一个专注技术和记录生活，小而美的博客。">
+  <meta property="og:description" content="一个专注技术和记录生活，小而美的博客。">
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="马攀的技术栈">
+<meta property="og:url" content="https://mapan.tech/posts/posts/d091.html ">
+<meta property="og:site_name" content="马攀的技术栈">
+
+
+
+
+
+
+
+
+<link href="/posts/lib/font-awesome/css/font-awesome.min.css?v=4.7.0" rel="stylesheet" type="text/css">
+
+<link href="/posts/css/main.css?v=5.0.2" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+  <link rel="alternate" href="/posts/atom.xml" title="马攀的技术栈" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/posts/favicon.png?v=5.0.2">
+
+
+
+
+
+
+
+
+
+
+<script id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"remove"},
+    fancybox: false,
+    motion: false,
+  };
+</script>
+
+
+
+
+
+
+
+  <title> 基于51单片机的万年历『2』 | 马攀的技术栈 </title>
+<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"></script></head>
+
+<body itemscope itemtype="https://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="https://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-meta ">
+  
+  <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">马攀的技术栈</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">If you're going to try , go all the way.</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/posts/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            博客
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-message">
+          <a href="/posts/message.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-soccer-ball-o"></i> <br>
+            
+            寄言
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/posts/about.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-blogroll">
+          <a href="/posts/blogroll.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br>
+            
+            友链
+          </a>
+        </li>
+      
+
+ </ul></nav></div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="https://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                基于51单片机的万年历『2』
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-12-04T11:20:00+08:00" content="2015年12月04日">
+              2015年12月04日
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/posts/d091.html" class="leancloud_visitors" data-flag-title="基于51单片机的万年历『2』">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-text">
+                  <i class="fa fa-eye"></i>
+               </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>相比<a href="http://localhost:4000/2015/08/06/038/" target="_blank" rel="noopener">第一版</a>，升级了屏幕和功能。使用LCD12864屏幕。某宝有卖，下面的电路板是手工制作的，为了能与LCD匹配，大小我特意制作的和LCD屏幕一样大。安装好显得刚刚好<br><img src="https://ws1.sinaimg.cn/large/005vwoCygy1fl40txyo1rj30hs0axdi0.jpg" alt></p>
+<p>从中间角度看</p>
+<p><img src="https://ws1.sinaimg.cn/large/005vwoCygy1fl40tzg0k4j30c00sqdjj.jpg" alt></p>
+<p>前面留有micro-USB供电接口和下载程序排针接口。普通安卓数据线就可以供电了。<br><img src="https://ws1.sinaimg.cn/large/005vwoCygy1fl40u0rc5yj30t30endlf.jpg" alt></p>
+<p>首先用电脑画出印刷电路板的样图，花了一个下午的时间。<br><img src="https://ws1.sinaimg.cn/large/005vwoCygy1fl40tztp3qj30hs0dh426.jpg" alt></p>
+<p>转印到覆铜板，准备腐蚀，用了一个饭盒，是透明的。<br><img src="https://ws1.sinaimg.cn/large/005vwoCygy1fl40ty080uj30qo0k0di8.jpg" alt></p>
+<p>加入沸水，只需要三五分钟 即可腐蚀完成。<br><img src="https://ws1.sinaimg.cn/large/005vwoCygy1fl40ty9nhvj30hs0dcgod.jpg" alt></p>
+<p>腐蚀完毕，捞出来擦干，打磨掉走线上的墨粉<br><img src="https://ws1.sinaimg.cn/large/005vwoCygy1fl40u1rojuj30hs0cr0us.jpg" alt></p>
+<p>下面打孔，由于用了贴片元件，因此减少了很多过孔。<br><img src="https://ws1.sinaimg.cn/large/005vwoCygy1fl40tycybsj30hs0hzgnn.jpg" alt></p>
+<p>手工焊接贴片元件是比较困难的。所以首先焊接贴片芯片，焊接前要在焊盘上镀一层焊锡，这样容易焊接<br><img src="https://ws1.sinaimg.cn/large/005vwoCygy1fl40tz15rkj30hs0dcdih.jpg" alt></p>
+<p>焊接完成，使用万用表蜂鸣档测试，没有虚焊和连锡。<br><img src="https://ws1.sinaimg.cn/large/005vwoCygy1fl40u0cpf9j30hs0dc77f.jpg" alt></p>
+<p>焊接基本完成，为了防止走线氧化，我把铜线上镀了一层锡。<br><img src="https://ws1.sinaimg.cn/large/005vwoCygy1fl40tyz0wsj30dc0hsq5s.jpg" alt></p>
+<p>然后就是很长很长的代码要写，</p>
+<hr>
+<p>省略三千行代码先</p>
+<p>在坛友提供的资料和程序中调试良久，程序终于适配了我的硬件</p>
+<p>欣赏<br><img src="https://ws1.sinaimg.cn/large/005vwoCygy1fl40txli5dj30f409gq44.jpg" alt></p>
+<p>这个兔斯基是我在百度上搜索的图片，然后用PS修出细致轮廓。再用软件转成代码，写到程序里面。<br><img src="https://ws1.sinaimg.cn/large/005vwoCygy1fl40ty9066j30c80hsgn1.jpg" alt></p>
+<p>同样 ，这个也是。只是感觉挺可爱的，正好大小也合适，所以就选择了这个图<br><img src="https://ws1.sinaimg.cn/large/005vwoCygy1fl40txk2p6j30d00hsmyf.jpg" alt></p>
+<p>下图为节日提醒功能。支持节日自定义（农历阳历均可）。<br>方法：在程序相应代码段添加相应代码即可<br>其中农历是完全靠算法实现的，没有使用专业芯片<br><img src="https://ws1.sinaimg.cn/large/005vwoCygy1fl40ty4hy3j30hs09pq4b.jpg" alt></p>
+<p>开机启动界面<br><img src="https://ws1.sinaimg.cn/large/005vwoCygy1fl40tym453j30ak0hsq48.jpg" alt></p>
+<p>大字体模式一<br><img src="https://ws1.sinaimg.cn/large/005vwoCygy1fl40tzduhfj30hs0cbjss.jpg" alt></p>
+<p>大字体模式二<br><img src="https://ws1.sinaimg.cn/large/005vwoCygy1fl40tzsf36j30hs0ceac0.jpg" alt></p>
+<p>正常模式<br><img src="https://ws1.sinaimg.cn/large/005vwoCygy1fl40tzsdsxj30hs0butak.jpg" alt><br>设置界面<br><img src="https://ws1.sinaimg.cn/large/005vwoCygy1fl40u0709fj30hs0bq0uf.jpg" alt></p>
+<p>闹钟设置界面<br><img src="https://ws1.sinaimg.cn/large/005vwoCygy1fl40tzwta8j30hs0aqdgn.jpg" alt></p>
+<h2 id="视频效果"><a href="#视频效果" class="headerlink" title="视频效果"></a>视频效果</h2><p><div id="dplayer6" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer6"),"video":{"url":"https://gss3.baidu.com/6LZ0ej3k1Qd3ote6lo7D0j9wehsv/tieba-smallvideo-transcode/43564226_42e1c00d198b33894ea7295fd41af0b4_5237259cc634_1.mp4"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>``</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/8258.html" rel="next" title="立体旋转显示LED屏">
+                <i class="fa fa-chevron-left"></i> 立体旋转显示LED屏
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/d48d.html" rel="prev" title="51单片机与PC通信方法总结">
+                51单片机与PC通信方法总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+    <div class="post-spread">
+      
+        <div class="post-info">
+
+        <!--p><span>本文标题：</span><a href="https://mapan.tech/posts/d091.html">基于51单片机的万年历『2』</a></p-->
+        <p><span>文章作者：</span><a href="https://mapan.tech/posts" title="回到主页">马攀</a></p>
+        <p><span>发布时间：</span>2015-12-04 , 11:20:00</p>
+        <!--p><span>最后更新：</span>2017-11-04 , 21:06:00</p-->
+        <script src="https://mapan.tech/js/src/clipboard.min.js"></script>
+        <p>
+            <span>原始链接：</span><a class="post-url" href="https://mapan.tech/posts/d091.html" title="基于51单片机的万年历『2』">https://mapan.tech/posts/d091.html</a> 
+        </p>
+        <p>
+            <span>许可协议：</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/" title="CC BY-NC 4.0 International" target="_blank">署名-非商业性使用</a> 转载请保留原文链接及作者。
+        </p>
+        
+</div>
+<style>
+        .post-info {
+	    width: 85%;
+	    max-width: 45em;
+	    margin: 1.2em auto 0;
+	    padding: 0.4em 1.8em;
+	    border: 1px solid #d3d3d3;
+	    font-size: 0.93rem;
+	    line-height: 1.5em;
+	    word-break: break-all;
+	    background: rgba(255,255,255,0.4);
+		}	
+		.post-info p {
+		text-align:left;
+		padding-left: 1%;
+	    display: block;
+	    -webkit-margin-before: 1em;
+	    -webkit-margin-after: 1em;
+	    -webkit-margin-start: 0px;
+	    -webkit-margin-end: 0px;
+		}
+		.post-info span {
+	    display: inline-block;
+	    width: 5.8em;
+	    color: #b5b5b5;
+	    font-weight: bold;
+
+		}
+        </style>  
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="comments">
+        
+        
+        <script src="/posts/lib/valine/av-min.js?v=3.0.4"></script>
+        <script src="/posts/lib/valine/Valine.min.js"></script>
+<script>new Valine({el:'#comments',verify:true,notify:false,appId:'XtxvAXPwOzM9noIc3eyxi3AS-gzGzoHsz',appKey:'yEVQszyxb4bwLuAGU5VHnPR8',placeholder:'说点什么吧',avatar:'mm',pageSize:'10'||10,lang:'zh-cn'});</script>
+      
+    </div>
+
+        </div>
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2015 - 2019 
+
+  
+
+  
+    Mapan
+  
+  <!--span class="author" itemprop="copyrightHolder">马攀&nbsp;&nbsp;</span-->
+
+  
+
+  
+
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+    </div>
+
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/posts/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/posts/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script src="/posts/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script src="/posts/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/posts/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/posts/js/src/utils.js?v=5.0.2"></script>
+
+  <script src="/posts/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script src="/posts/js/src/scrollspy.js?v=5.0.2"></script>
+<script src="/posts/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script src="/posts/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  <script src="//cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("3gYi2qVKgUdV36I3fhT5HUEB-gzGzoHsz", "z6kCOGkyBplbK5lxmPXsvTuT");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+
+
+</body>
+</html>

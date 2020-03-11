@@ -1,0 +1,676 @@
+<!doctype html>
+
+
+
+
+<!--html class="theme-next mist"-->
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta http-equiv="Cache-Control" content="max-age=7200">
+
+<meta name="theme-color" content="#333333">
+<meta name="referrer" content="same-origin">
+<meta name="referrer" content="no-referrer">
+
+
+
+  <meta name="author" content="马攀">
+
+
+
+  <meta name="keywords" content="马攀,mapan,马攀博客,马攀的博客">
+  <meta property="og:keywords" content="马攀,mapan,马攀博客,马攀的博客">
+
+
+
+  <meta name="description" content="一个专注技术和记录生活，小而美的博客。">
+  <meta property="og:description" content="一个专注技术和记录生活，小而美的博客。">
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="马攀的技术栈">
+<meta property="og:url" content="https://mapan.tech/posts/posts/1aa0.html ">
+<meta property="og:site_name" content="马攀的技术栈">
+
+
+
+
+
+
+
+
+<link href="/posts/lib/font-awesome/css/font-awesome.min.css?v=4.7.0" rel="stylesheet" type="text/css">
+
+<link href="/posts/css/main.css?v=5.0.2" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+  <link rel="alternate" href="/posts/atom.xml" title="马攀的技术栈" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/posts/favicon.png?v=5.0.2">
+
+
+
+
+
+
+
+
+
+
+<script id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"remove"},
+    fancybox: false,
+    motion: false,
+  };
+</script>
+
+
+
+
+
+
+
+  <title> 语音交互式家居控制系统的设计 | 马攀的技术栈 </title>
+</head>
+
+<body itemscope itemtype="https://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="https://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-meta ">
+  
+  <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">马攀的技术栈</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">If you're going to try , go all the way.</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/posts/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            博客
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-message">
+          <a href="/posts/message.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-soccer-ball-o"></i> <br>
+            
+            寄言
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/posts/about.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-blogroll">
+          <a href="/posts/blogroll.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br>
+            
+            友链
+          </a>
+        </li>
+      
+
+ </ul></nav></div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="https://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                语音交互式家居控制系统的设计
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-05T17:05:00+08:00" content="2017年01月05日">
+              2017年01月05日
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/posts/1aa0.html" class="leancloud_visitors" data-flag-title="语音交互式家居控制系统的设计">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-text">
+                  <i class="fa fa-eye"></i>
+               </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>我的毕业设计选题是『交互式语音家居控制系统的设计』，从16年12月20号着手开始设计制作以及调试，到了今天也算告一段落了。实现了语音识别、人机对话、无线控制、语音报时、时间温度显示，设置闹钟等功能。<br>现在还存在的bug有语音报时中间停歇的时间稍长。原因是MP3模块的指定文件播放需要反应时间，根据实际测试，大约需要800ms的延时才可以播放下一段录音，也就是说两段录音之间的间隔要800ms，目前还正在寻找解决的方案。</p>
+<h1 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h1><ul>
+<li>语音识别模块</li>
+<li>MP3播放模块</li>
+<li>蓝牙HC-05模块 x 2</li>
+<li>继电器模块 x 1 </li>
+<li><p>时钟模块   </p>
+<blockquote>
+<p>DS3231模块<br>DS1302</p>
+</blockquote>
+</li>
+<li><p>电容</p>
+<blockquote>
+<p>100uF x 1<br>10uF x 1<br>104 x 1</p>
+</blockquote>
+</li>
+<li><p>功放模块 x 1</p>
+</li>
+<li>STC12C5A60S2  x 2</li>
+<li>0.5w 8ohm扬声器 x 2   </li>
+<li><p>晶振</p>
+<blockquote>
+<p>32.768KHz晶振 x 1<br>22.1184MHz晶振 x 2</p>
+</blockquote>
+</li>
+<li><p>LCD1602液晶屏</p>
+</li>
+<li>2000mA锂电池充放电模块</li>
+<li><p>按键 </p>
+<blockquote>
+<p>点动按键 X 4<br>长按键 x 2 </p>
+</blockquote>
+</li>
+<li><p>3mm铜柱 x 15</p>
+</li>
+<li>3mm螺母 x 8</li>
+<li>3mm螺丝 x 12</li>
+<li>覆铜板 x 2</li>
+<li>杜邦线 若干</li>
+<li>纸盒 x 1</li>
+<li>贴纸 若干</li>
+<li><p>开关</p>
+<blockquote>
+<p>船型开关 x 1<br>自锁开关 x 1</p>
+</blockquote>
+</li>
+<li><p>5V 200mA 电源适配器 x 1</p>
+</li>
+<li>SDcard x 1</li>
+<li>纽扣电池 x 1</li>
+<li>温度传感器 DS18B20 X 1 </li>
+<li>10kohm电位器</li>
+<li>共阴极雾状RGB全彩灯珠 x 1</li>
+<li>排母 若干</li>
+<li>排针 若干</li>
+<li>10kohm排阻 x 1</li>
+</ul>
+<h1 id="原理介绍"><a href="#原理介绍" class="headerlink" title="原理介绍"></a>原理介绍</h1><p>通过语音识别模块来识别我们说出的话（普通话最好，河南话也可），识别结果通过串口返回单片机，单片机控制MP3模块播放相应语音 、进行相应的蓝牙数据传送。<br>其中主要涉及到的是串口通信协议，IIC协议等<br>——————————-割—————————————</p>
+<p>下面是手工制作的步骤</p>
+<h1 id="原理图"><a href="#原理图" class="headerlink" title="原理图"></a>原理图</h1><p>主控制板<br>!()[]<br><img class="lazy" src="http://ofasa9w0p.bkt.clouddn.com/047/c02.jpg" data-original="http://ofasa9w0p.bkt.clouddn.com/047/c02.jpg" width="640" height="340"></p>
+<p>从控制板<br><img class="lazy" src="http://ofasa9w0p.bkt.clouddn.com/047/c03.jpg" data-original="http://ofasa9w0p.bkt.clouddn.com/047/c03.jpg" width="640" height="267"></p>
+<h1 id="PCB图"><a href="#PCB图" class="headerlink" title="PCB图"></a>PCB图</h1><p>主控制板<br><img class="lazy" src="http://ofasa9w0p.bkt.clouddn.com/047/c01.jpg" data-original="http://ofasa9w0p.bkt.clouddn.com/047/c01.jpg" width="640" height="317"></p>
+<p>从控制板<br><img class="lazy" src="http://ofasa9w0p.bkt.clouddn.com/047/c04.jpg" data-original="http://ofasa9w0p.bkt.clouddn.com/047/c04.jpg" width="640" height="712"></p>
+<h1 id="手工制作步骤"><a href="#手工制作步骤" class="headerlink" title="手工制作步骤"></a>手工制作步骤</h1><p>打印到转印纸<br><img class="lazy" src="http://ofasa9w0p.bkt.clouddn.com/047/c05.jpg" data-original="http://ofasa9w0p.bkt.clouddn.com/047/c05.jpg" width="640" height="473"></p>
+<p>使用熨斗熨烫到覆铜板<br><img class="lazy" src="http://ofasa9w0p.bkt.clouddn.com/047/c06.jpg" data-original="http://ofasa9w0p.bkt.clouddn.com/047/c06.jpg" width="640" height="864"></p>
+<p>冷却后 揭下转印纸，墨完全转印到覆铜板上<br><img class="lazy" src="http://ofasa9w0p.bkt.clouddn.com/047/c07.jpg" data-original="http://ofasa9w0p.bkt.clouddn.com/047/c07.jpg" width="640" height="864"></p>
+<p>切割成合适的大小<br><img class="lazy" src="http://ofasa9w0p.bkt.clouddn.com/047/c08.jpg" data-original="http://ofasa9w0p.bkt.clouddn.com/047/c08.jpg" width="640" height="473"></p>
+<p>准备腐蚀<br><img class="lazy" src="http://ofasa9w0p.bkt.clouddn.com/047/c09.jpg" data-original="http://ofasa9w0p.bkt.clouddn.com/047/c09.jpg" width="640" height="864"></p>
+<p>正在腐蚀<br><img class="lazy" src="http://ofasa9w0p.bkt.clouddn.com/047/c10.jpg" data-original="http://ofasa9w0p.bkt.clouddn.com/047/c10.jpg" width="640" height="864"></p>
+<p>多余的铜已经基本腐蚀掉了<br><img class="lazy" src="http://ofasa9w0p.bkt.clouddn.com/047/c11.jpg" data-original="http://ofasa9w0p.bkt.clouddn.com/047/c11.jpg" width="640" height="864"></p>
+<p>打捞出来洗净晾干<br><img class="lazy" src="http://ofasa9w0p.bkt.clouddn.com/047/c13.jpg" data-original="http://ofasa9w0p.bkt.clouddn.com/047/c13.jpg" width="640" height="473"></p>
+<p>准备打孔，用自己DIY的手钻<br><img class="lazy" src="http://ofasa9w0p.bkt.clouddn.com/047/c12.jpg" data-original="http://ofasa9w0p.bkt.clouddn.com/047/c12.jpg" width="640" height="473"></p>
+<p>焊接上贴片单片机<br><img class="lazy" src="http://ofasa9w0p.bkt.clouddn.com/047/c14.jpg" data-original="http://ofasa9w0p.bkt.clouddn.com/047/c14.jpg" width="640" height="473"></p>
+<p>成品图<br><img class="lazy" src="http://ofasa9w0p.bkt.clouddn.com/047/c15.jpg" data-original="http://ofasa9w0p.bkt.clouddn.com/047/c15.jpg" width="640" height="473"></p>
+<p>从控制板过程也是这样<br><img class="lazy" src="http://ofasa9w0p.bkt.clouddn.com/047/c16.jpg" data-original="http://ofasa9w0p.bkt.clouddn.com/047/c16.jpg" width="640" height="473"></p>
+<p>过程省略，效果图如下<br><img class="lazy" src="http://ofasa9w0p.bkt.clouddn.com/047/c18.jpg" data-original="http://ofasa9w0p.bkt.clouddn.com/047/c18.jpg" width="640" height="864"></p>
+<p><img class="lazy" src="http://ofasa9w0p.bkt.clouddn.com/047/c17.jpg" data-original="http://ofasa9w0p.bkt.clouddn.com/047/c17.jpg" width="640" height="864"></p>
+<p>程序流程图</p>
+<p>主程序<br><img class="lazy" src="http://ofasa9w0p.bkt.clouddn.com/047/c22.jpg" data-original="http://ofasa9w0p.bkt.clouddn.com/047/c22.jpg" width="460" height="704"></p>
+<p>循环模式<br><img class="lazy" src="http://ofasa9w0p.bkt.clouddn.com/047/c21.jpg" data-original="http://ofasa9w0p.bkt.clouddn.com/047/c21.jpg" width="447" height="657"></p>
+<p>口令模式<br><img class="lazy" src="http://ofasa9w0p.bkt.clouddn.com/047/c20.jpg" data-original="http://ofasa9w0p.bkt.clouddn.com/047/c20.jpg" width="538" height="865"></p>
+<p>报时模式<br><img class="lazy" src="http://ofasa9w0p.bkt.clouddn.com/047/c19.jpg" data-original="http://ofasa9w0p.bkt.clouddn.com/047/c19.jpg" width="197" height="342"></p>
+<hr>
+<p><a href="/Graduate/index.html">项目主页</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/e12d.html" rel="next" title="单片机IO口模拟I2C时序驱动AT24C32">
+                <i class="fa fa-chevron-left"></i> 单片机IO口模拟I2C时序驱动AT24C32
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/f237.html" rel="prev" title="读书体会">
+                读书体会 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+    <div class="post-spread">
+      
+        <div class="post-info">
+
+        <!--p><span>本文标题：</span><a href="https://mapan.tech/posts/1aa0.html">语音交互式家居控制系统的设计</a></p-->
+        <p><span>文章作者：</span><a href="https://mapan.tech/posts" title="回到主页">马攀</a></p>
+        <p><span>发布时间：</span>2017-01-05 , 17:05:00</p>
+        <!--p><span>最后更新：</span>2018-12-20 , 21:36:20</p-->
+        <script src="https://mapan.tech/js/src/clipboard.min.js"></script>
+        <p>
+            <span>原始链接：</span><a class="post-url" href="https://mapan.tech/posts/1aa0.html" title="语音交互式家居控制系统的设计">https://mapan.tech/posts/1aa0.html</a> 
+        </p>
+        <p>
+            <span>许可协议：</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/" title="CC BY-NC 4.0 International" target="_blank">署名-非商业性使用</a> 转载请保留原文链接及作者。
+        </p>
+        
+</div>
+<style>
+        .post-info {
+	    width: 85%;
+	    max-width: 45em;
+	    margin: 1.2em auto 0;
+	    padding: 0.4em 1.8em;
+	    border: 1px solid #d3d3d3;
+	    font-size: 0.93rem;
+	    line-height: 1.5em;
+	    word-break: break-all;
+	    background: rgba(255,255,255,0.4);
+		}	
+		.post-info p {
+		text-align:left;
+		padding-left: 1%;
+	    display: block;
+	    -webkit-margin-before: 1em;
+	    -webkit-margin-after: 1em;
+	    -webkit-margin-start: 0px;
+	    -webkit-margin-end: 0px;
+		}
+		.post-info span {
+	    display: inline-block;
+	    width: 5.8em;
+	    color: #b5b5b5;
+	    font-weight: bold;
+
+		}
+        </style>  
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="comments">
+        
+        
+        <script src="/posts/lib/valine/av-min.js?v=3.0.4"></script>
+        <script src="/posts/lib/valine/Valine.min.js"></script>
+<script>new Valine({el:'#comments',verify:true,notify:false,appId:'XtxvAXPwOzM9noIc3eyxi3AS-gzGzoHsz',appKey:'yEVQszyxb4bwLuAGU5VHnPR8',placeholder:'说点什么吧',avatar:'mm',pageSize:'10'||10,lang:'zh-cn'});</script>
+      
+    </div>
+
+        </div>
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2015 - 2019 
+
+  
+
+  
+    Mapan
+  
+  <!--span class="author" itemprop="copyrightHolder">马攀&nbsp;&nbsp;</span-->
+
+  
+
+  
+
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+    </div>
+
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/posts/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/posts/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script src="/posts/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script src="/posts/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/posts/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/posts/js/src/utils.js?v=5.0.2"></script>
+
+  <script src="/posts/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script src="/posts/js/src/scrollspy.js?v=5.0.2"></script>
+<script src="/posts/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script src="/posts/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  <script src="//cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("3gYi2qVKgUdV36I3fhT5HUEB-gzGzoHsz", "z6kCOGkyBplbK5lxmPXsvTuT");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,605 @@
+<!doctype html>
+
+
+
+
+<!--html class="theme-next mist"-->
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta http-equiv="Cache-Control" content="max-age=7200">
+
+<meta name="theme-color" content="#333333">
+<meta name="referrer" content="same-origin">
+<meta name="referrer" content="no-referrer">
+
+
+
+  <meta name="author" content="马攀">
+
+
+
+  <meta name="keywords" content="马攀,mapan,马攀博客,马攀的博客">
+  <meta property="og:keywords" content="马攀,mapan,马攀博客,马攀的博客">
+
+
+
+  <meta name="description" content="一个专注技术和记录生活，小而美的博客。">
+  <meta property="og:description" content="一个专注技术和记录生活，小而美的博客。">
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="马攀的技术栈">
+<meta property="og:url" content="https://mapan.tech/posts/posts/fac.html ">
+<meta property="og:site_name" content="马攀的技术栈">
+
+
+
+
+
+
+
+
+<link href="/posts/lib/font-awesome/css/font-awesome.min.css?v=4.7.0" rel="stylesheet" type="text/css">
+
+<link href="/posts/css/main.css?v=5.0.2" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+  <link rel="alternate" href="/posts/atom.xml" title="马攀的技术栈" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/posts/favicon.png?v=5.0.2">
+
+
+
+
+
+
+
+
+
+
+<script id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"remove"},
+    fancybox: false,
+    motion: false,
+  };
+</script>
+
+
+
+
+
+
+
+  <title> 汇编基本语法实现 | 马攀的技术栈 </title>
+</head>
+
+<body itemscope itemtype="https://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="https://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-meta ">
+  
+  <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">马攀的技术栈</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">If you're going to try , go all the way.</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/posts/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            博客
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-message">
+          <a href="/posts/message.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-soccer-ball-o"></i> <br>
+            
+            寄言
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/posts/about.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-blogroll">
+          <a href="/posts/blogroll.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br>
+            
+            友链
+          </a>
+        </li>
+      
+
+ </ul></nav></div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="https://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                汇编基本语法实现
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-07-20T16:01:02+08:00" content="2018年07月20日">
+              2018年07月20日
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/posts/fac.html" class="leancloud_visitors" data-flag-title="汇编基本语法实现">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-text">
+                  <i class="fa fa-eye"></i>
+               </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="第五个程序"><a href="#第五个程序" class="headerlink" title="第五个程序"></a>第五个程序</h3><p>堆栈的学习<br><figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">assume</span> <span class="built_in">cs</span>:codesg</span><br><span class="line"></span><br><span class="line">codesg <span class="meta">segment</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">mov</span> <span class="built_in">ax</span>,<span class="number">2000h</span>  	<span class="comment">;地址2000h赋值给ax</span></span><br><span class="line">	<span class="keyword">mov</span> <span class="built_in">ss</span>,<span class="built_in">ax</span>  	<span class="comment">;ax的值传递给段寄存器ss</span></span><br><span class="line">	<span class="keyword">mov</span> <span class="built_in">sp</span>,<span class="number">0</span>  	<span class="comment">;堆栈指针sp赋初值0</span></span><br><span class="line">	<span class="keyword">pop</span> <span class="built_in">ax</span>  	<span class="comment">;出栈到ax</span></span><br><span class="line">	<span class="keyword">pop</span> <span class="built_in">bx</span>  	<span class="comment">;出栈到bx</span></span><br><span class="line">	<span class="keyword">push</span> <span class="built_in">ax</span>  	<span class="comment">;ax入栈</span></span><br><span class="line">	<span class="keyword">push</span> <span class="built_in">bx</span>  	<span class="comment">;bx入栈</span></span><br><span class="line">	<span class="keyword">pop</span> <span class="built_in">ax</span>  	<span class="comment">;出栈到ax</span></span><br><span class="line">	<span class="keyword">pop</span> <span class="built_in">bx</span>  	<span class="comment">;出栈到bx</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">mov</span> <span class="built_in">ax</span>,<span class="number">4c00h</span></span><br><span class="line">	<span class="keyword">int</span> <span class="number">21h</span></span><br><span class="line">	</span><br><span class="line">codesg ends</span><br><span class="line"></span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
+<p>首先观察代码段的前256字节称为PSP的内容<br><img src="https://ws1.sinaimg.cn/mw690/005vwoCyly1ftgg33nd3aj30hj060767.jpg" alt></p>
+<p>通过debug观察各个寄存器的值，通过现象学习堆栈的<em>后进先出</em>的操作规则。<br><img src="https://ws1.sinaimg.cn/mw690/005vwoCyly1ftgg3f8onvj30i40grads.jpg" alt><br>可以看到进行<br>出栈出栈<br>入栈入栈<br>再出栈出栈<br>之后<br>ax和bx寄存器的值进行了交换。</p>
+<p>类似生活中的一瓶糖水，一瓶盐水，现在需要交换两个瓶子的液体。使用“堆栈”这个容器进行了一个中转。</p>
+<hr>
+<h3 id="第六个程序"><a href="#第六个程序" class="headerlink" title="第六个程序"></a>第六个程序</h3><p>程序功能把内存单元的ffff:0    ~ffff:b单元的内容复制到0:200~0：20b内存单元中。<br><figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">assume</span> <span class="built_in">cs</span>:code </span><br><span class="line"></span><br><span class="line">code <span class="meta">segment</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">mov</span> <span class="built_in">ax</span>,<span class="number">0ffffh</span>  	<span class="comment">;通过ax中转给段寄存器ds赋初值FFFFH</span></span><br><span class="line">	<span class="keyword">mov</span> <span class="built_in">ds</span>,<span class="built_in">ax</span></span><br><span class="line">	<span class="keyword">mov</span> <span class="built_in">ax</span>,<span class="number">0020h</span>  	<span class="comment">;通过ax中转给段寄存器es赋初值20H</span></span><br><span class="line">	<span class="keyword">mov</span> <span class="built_in">es</span>,<span class="built_in">ax</span></span><br><span class="line">	<span class="keyword">mov</span> <span class="built_in">bx</span>,<span class="number">0</span>  	<span class="comment">;bx置零</span></span><br><span class="line">	<span class="keyword">mov</span> <span class="built_in">cx</span>,<span class="number">12</span>  	<span class="comment">;循环12次</span></span><br><span class="line">	</span><br><span class="line"><span class="symbol">s:</span>  	<span class="keyword">mov</span> <span class="built_in">dl</span>,[<span class="built_in">bx</span>]  	<span class="comment">;循环体s 开始循环12次</span></span><br><span class="line">	<span class="keyword">mov</span> <span class="built_in">es</span>:[<span class="built_in">bx</span>],<span class="built_in">dl</span>  <span class="comment">;通过dl中转把ds:0-ds:b中的内容复制到es:0-es:b</span></span><br><span class="line">	<span class="keyword">inc</span> <span class="built_in">bx</span>  	<span class="comment">;b自增一</span></span><br><span class="line">	<span class="keyword">loop</span>  		<span class="comment">;循环</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">mov</span> <span class="built_in">ax</span>,<span class="number">4c00h</span></span><br><span class="line">	<span class="keyword">int</span> <span class="number">21h</span></span><br><span class="line">	</span><br><span class="line">code ends</span><br><span class="line"></span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
+<p>总结：此程序类似C语言中的循环,通过段寄存器DS和ES、BX自加、 以及循环，达到复制内存的目的。其中bx的作用就相当于C语言中的自加量i的作用。C代码如下<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> i;</span><br><span class="line"><span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; <span class="number">12</span>; i++)</span><br><span class="line">&#123;</span><br><span class="line">	ds[i] = es[i];</span><br><span class="line">	i++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="包含多个段的程序"><a href="#包含多个段的程序" class="headerlink" title="包含多个段的程序"></a>包含多个段的程序</h2><p>在计算机运行程序时，程序和数据都是以二进制形式加载到内存中，实际上程序段和数据段对于计算机来说并没有任何不同。但是对于编程人员来说并不是一件好事，我们希望程序和数据以及堆栈分开存放。那么就需要对程序进行分块了。</p>
+<h3 id="第七个程序"><a href="#第七个程序" class="headerlink" title="第七个程序"></a>第七个程序</h3><p>交换内存中数据段前两个双字单元的数据<br><figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">assume</span> <span class="built_in">cs</span>:code,<span class="built_in">ds</span>:data,<span class="built_in">ss</span>:stack</span><br><span class="line"></span><br><span class="line">data <span class="meta">segment</span>  	<span class="comment">;定义数据段</span></span><br><span class="line">	<span class="built_in">dw</span> <span class="number">0123h</span>,<span class="number">0456h</span>,<span class="number">0798h</span>,<span class="number">0abch</span>,<span class="number">0defh</span>,<span class="number">0fdeh</span>,<span class="number">0cbah</span>,<span class="number">0987h</span></span><br><span class="line">data ends</span><br><span class="line"></span><br><span class="line">stack <span class="meta">segment</span>  	<span class="comment">;定义栈段</span></span><br><span class="line">	<span class="built_in">dw</span> <span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span></span><br><span class="line">stack ends</span><br><span class="line"></span><br><span class="line">code <span class="meta">segment</span>  	<span class="comment">;定义代码段</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">start:</span> 		<span class="keyword">mov</span> <span class="built_in">ax</span>,data  	<span class="comment">;数据段地址给到ds</span></span><br><span class="line">		<span class="keyword">mov</span> <span class="built_in">ds</span>,<span class="built_in">ax</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">mov</span> <span class="built_in">ax</span>,stack  	<span class="comment">;栈段地址给到ss</span></span><br><span class="line">		<span class="keyword">mov</span> <span class="built_in">ss</span>,<span class="built_in">ax</span></span><br><span class="line">		<span class="keyword">mov</span> <span class="built_in">sp</span>,<span class="number">16</span>  	<span class="comment">;栈段指针指向栈底</span></span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">push</span> <span class="built_in">ds</span>:[<span class="number">0</span>]  	<span class="comment">;把数据段的ds:[0]单元的双字内容 压入栈</span></span><br><span class="line">		<span class="keyword">push</span> <span class="built_in">ds</span>:[<span class="number">2</span>]  	<span class="comment">;把数据段的ds:[2]单元的双字内容 压入栈</span></span><br><span class="line">		<span class="keyword">pop</span> <span class="built_in">ds</span>:[<span class="number">0</span>]  	<span class="comment">;出栈到ds:[0]单元</span></span><br><span class="line">		<span class="keyword">pop</span> <span class="built_in">ds</span>:[<span class="number">2</span>]  	<span class="comment">;出栈到ds:[2]单元</span></span><br><span class="line">		</span><br><span class="line">		<span class="keyword">mov</span> <span class="built_in">ax</span>,<span class="number">4c00h</span></span><br><span class="line">		<span class="keyword">int</span> <span class="number">21h</span></span><br><span class="line"></span><br><span class="line">code ends</span><br><span class="line"></span><br><span class="line">end start</span><br></pre></td></tr></table></figure></p>
+<p>通过<code>debug调试器</code>可以即将运行的代码看到<code>date段</code>的地址为<code>0b36h</code>,通过<code>d命令</code>查看内存<code>0b36</code>处的内容，正是在程序中定义的数据段<code>0123h，0456h,···，0987h</code><br>栈段地址为0b37h，在内存中<code>0b36:0010</code>单元处即为在程序中定义的全0的栈段。<br><img src="https://ws1.sinaimg.cn/mw690/005vwoCyly1ftgkj8qz6sj30ht0fwtd6.jpg" alt><br>经过两次入栈和出栈之后，可以看出date段的前两个双字节中的数据已经交换了位置。<br><img src="https://ws1.sinaimg.cn/mw690/005vwoCyly1ftgkacor6pj30hs0au0v7.jpg" alt></p>
+<p>第八个程序<br>使用push指令将a段中的前八个字形数据逆序存储到b段中<br><figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">assume</span> <span class="built_in">cs</span>:code</span><br><span class="line"></span><br><span class="line">a <span class="meta">segment</span>  			<span class="comment">;a段数据</span></span><br><span class="line">	<span class="built_in">dw</span> <span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">0ah</span>,<span class="number">0bh</span>,<span class="number">0ch</span>,<span class="number">0dh</span>,<span class="number">0eh</span>,<span class="number">0fh</span>,<span class="number">0ffh</span>  </span><br><span class="line">a ends</span><br><span class="line"></span><br><span class="line">b <span class="meta">segment</span></span><br><span class="line">	<span class="built_in">dw</span> <span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>  	<span class="comment">;b段数据</span></span><br><span class="line">b ends</span><br><span class="line"></span><br><span class="line">code <span class="meta">segment</span>  			<span class="comment">;代码段</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">start:</span> 	<span class="keyword">mov</span> <span class="built_in">ax</span>,b  		<span class="comment">;把栈段指针指向b数据段</span></span><br><span class="line">		<span class="keyword">mov</span> <span class="built_in">ss</span>,<span class="built_in">ax</span></span><br><span class="line">		<span class="keyword">mov</span> <span class="built_in">sp</span>,<span class="number">16</span></span><br><span class="line">		</span><br><span class="line">		<span class="keyword">mov</span> <span class="built_in">ax</span>,a  	<span class="comment">;数据指针指向a段数据</span></span><br><span class="line">		<span class="keyword">mov</span> <span class="built_in">ds</span>,<span class="built_in">ax</span></span><br><span class="line">		<span class="keyword">mov</span> <span class="built_in">cx</span>,<span class="number">8</span>  	<span class="comment">;设置8次循环</span></span><br><span class="line">		<span class="keyword">mov</span> <span class="built_in">bx</span>,<span class="number">0</span>  	<span class="comment">;变量bx初值为0</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">	s:</span>  <span class="keyword">push</span> <span class="built_in">ds</span>:[<span class="built_in">bx</span>]  	<span class="comment">;开始8次压栈</span></span><br><span class="line">		<span class="keyword">add</span> <span class="built_in">bx</span>,<span class="number">2</span>  	<span class="comment">;bx自加2</span></span><br><span class="line">		<span class="keyword">loop</span> s</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">mov</span> <span class="built_in">ax</span>,<span class="number">4c00h</span></span><br><span class="line">		<span class="keyword">int</span> <span class="number">21h</span></span><br><span class="line">code ends</span><br><span class="line"></span><br><span class="line">end start</span><br></pre></td></tr></table></figure></p>
+<p>如图执行数次循环后，a段数据已经逆序存储在b段中<br><img src="https://ws1.sinaimg.cn/mw690/005vwoCyly1ftgmdm9gqqj30hm0e6gm9.jpg" alt></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/c6d9.html" rel="next" title="汇编初识">
+                <i class="fa fa-chevron-left"></i> 汇编初识
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/6b1f.html" rel="prev" title="Frp内网穿透实现minecraft远程联机">
+                Frp内网穿透实现minecraft远程联机 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+    <div class="post-spread">
+      
+        <div class="post-info">
+
+        <!--p><span>本文标题：</span><a href="https://mapan.tech/posts/fac.html">汇编基本语法实现</a></p-->
+        <p><span>文章作者：</span><a href="https://mapan.tech/posts" title="回到主页">马攀</a></p>
+        <p><span>发布时间：</span>2018-07-20 , 16:01:02</p>
+        <!--p><span>最后更新：</span>2018-07-20 , 20:56:42</p-->
+        <script src="https://mapan.tech/js/src/clipboard.min.js"></script>
+        <p>
+            <span>原始链接：</span><a class="post-url" href="https://mapan.tech/posts/fac.html" title="汇编基本语法实现">https://mapan.tech/posts/fac.html</a> 
+        </p>
+        <p>
+            <span>许可协议：</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/" title="CC BY-NC 4.0 International" target="_blank">署名-非商业性使用</a> 转载请保留原文链接及作者。
+        </p>
+        
+</div>
+<style>
+        .post-info {
+	    width: 85%;
+	    max-width: 45em;
+	    margin: 1.2em auto 0;
+	    padding: 0.4em 1.8em;
+	    border: 1px solid #d3d3d3;
+	    font-size: 0.93rem;
+	    line-height: 1.5em;
+	    word-break: break-all;
+	    background: rgba(255,255,255,0.4);
+		}	
+		.post-info p {
+		text-align:left;
+		padding-left: 1%;
+	    display: block;
+	    -webkit-margin-before: 1em;
+	    -webkit-margin-after: 1em;
+	    -webkit-margin-start: 0px;
+	    -webkit-margin-end: 0px;
+		}
+		.post-info span {
+	    display: inline-block;
+	    width: 5.8em;
+	    color: #b5b5b5;
+	    font-weight: bold;
+
+		}
+        </style>  
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="comments">
+        
+        
+        <script src="/posts/lib/valine/av-min.js?v=3.0.4"></script>
+        <script src="/posts/lib/valine/Valine.min.js"></script>
+<script>new Valine({el:'#comments',verify:true,notify:false,appId:'XtxvAXPwOzM9noIc3eyxi3AS-gzGzoHsz',appKey:'yEVQszyxb4bwLuAGU5VHnPR8',placeholder:'说点什么吧',avatar:'mm',pageSize:'10'||10,lang:'zh-cn'});</script>
+      
+    </div>
+
+        </div>
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2015 - 2019 
+
+  
+
+  
+    Mapan
+  
+  <!--span class="author" itemprop="copyrightHolder">马攀&nbsp;&nbsp;</span-->
+
+  
+
+  
+
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+    </div>
+
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/posts/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/posts/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script src="/posts/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script src="/posts/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/posts/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/posts/js/src/utils.js?v=5.0.2"></script>
+
+  <script src="/posts/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script src="/posts/js/src/scrollspy.js?v=5.0.2"></script>
+<script src="/posts/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script src="/posts/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+  
+  <script src="//cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("3gYi2qVKgUdV36I3fhT5HUEB-gzGzoHsz", "z6kCOGkyBplbK5lxmPXsvTuT");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+
+
+</body>
+</html>
